@@ -52,14 +52,14 @@ button {
     padding: 5px;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Add transition */
-    color: black; /* Explicitly set text color */
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+    color: black; 
 }
 
 button:hover {
     transform: translateY(-4px);
     background-color: var(--link-color);
-    color: black; /* Explicitly set text color */
+    color: black; 
 }
 
 .navbar {
@@ -98,8 +98,8 @@ button:hover {
     content: '';
     position: absolute;
     width: 0;
-    height: 2px; /* height of the underline */
-    bottom: -2px; /* adjust as needed */
+    height: 2px; 
+    bottom: -2px; 
     left: 50%;
     background-color: var(--link-color);
     transition: width 0.8s ease, left 0.8s ease;
@@ -107,7 +107,7 @@ button:hover {
 }
 
 .nav-links a:hover::after {
-    width: calc(100% - 4px); /* adjust width as needed */
+    width: calc(100% - 4px);
     left: 2;
 }
 
