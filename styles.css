@@ -1,0 +1,120 @@
+:root {
+    --link-color: #DA702C;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+    font-family: "General Sans";
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
+
+.logo img {
+    height: 150px; 
+}
+
+p {
+    font-size: large;
+    font-weight: 500;
+}
+
+select {
+    background-color: #FFFCF0;
+    border: 2.5px solid black;
+    font-family: "General Sans";
+    font-weight: 500;
+    font-size: medium;
+    padding: 5px;
+    border-radius: 4px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="orange" stroke="black" stroke-width="2" d="M7.247 11.14 2.451 5.658C2.1 5.234 2.407 4.5 3.002 4.5h9.996c.595 0 .902.734.551 1.158l-4.796 5.482c-.345.394-.958.394-1.304 0z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 40px; 
+}
+
+/* Remove default arrow */
+select::-ms-expand {
+    display: none;
+}
+
+button {
+    background-color: #FFFCF0;
+    border: 2.5px solid black;
+    font-family: "General Sans";
+    font-weight: 500;
+    font-size: medium;
+    padding: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Add transition */
+    color: black; /* Explicitly set text color */
+}
+
+button:hover {
+    transform: translateY(-4px);
+    background-color: var(--link-color);
+    color: black; /* Explicitly set text color */
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: #FFFCF0;
+    width: 100%;
+    border: 3px solid black;
+    max-width: 1200px; /* Adjust as needed */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 50px;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: "General Sans";
+}
+
+.nav-links a {
+    position: relative;
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 1s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px; /* height of the underline */
+    bottom: -2px; /* adjust as needed */
+    left: 50%;
+    background-color: var(--link-color);
+    transition: width 0.8s ease, left 0.8s ease;
+    transform: translateX(-50%);
+}
+
+.nav-links a:hover::after {
+    width: calc(100% - 4px); /* adjust width as needed */
+    left: 2;
+}
+
+.nav-links a:hover {
+    color: var(--link-color);
+}
+
+.color-change {
+    color: var(--link-color);
+}
