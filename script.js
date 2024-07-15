@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const elementsToChange = document.querySelectorAll('.color-change');
     const selectsToChange = document.querySelectorAll('select');
     const root = document.documentElement;
+    const arrow = document.querySelector('.arrow');
+    const p2Element = document.querySelector('p2');
 
     occupationSelect.addEventListener('change', function() {
         let newColor;
@@ -36,5 +38,24 @@ document.addEventListener('DOMContentLoaded', function() {
             const encodedColor = encodeURIComponent(newColor);
             select.style.backgroundImage = `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="${encodedColor}" stroke="black" stroke-width="2" d="M7.247 11.14 2.451 5.658C2.1 5.234 2.407 4.5 3.002 4.5h9.996c.595 0 .902.734.551 1.158l-4.796 5.482c-.345.394-.958.394-1.304 0z"/></svg>')`;
         });
+    });
+
+    p2Element.addEventListener('mouseenter', function() {
+        arrow.classList.add('visible');
+    });
+
+    p2Element.addEventListener('mouseleave', function() {
+        arrow.classList.remove('visible');
+    });
+
+    const $icon = document.querySelector('.icon');
+    
+    arrow.animate([
+        {left: '0', easing: 'ease-in'},
+        {left: '10px', easing: 'ease-out'},
+        {left: '0'}
+    ], {
+        duration: 700,
+        iterations: Infinity
     });
 });

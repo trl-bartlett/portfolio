@@ -11,23 +11,29 @@ html, body {
     align-items: center;
     justify-content: center;
     text-align: left;
+    background-color: #FFFCF0;
 }
 
 .logo img {
-    height: 150px; 
+    height: 140px; 
 }
 
 p {
-    font-size: large;
+    font-size: larger;
     font-weight: 500;
 }
 
+p2 {
+    font-size: larger;
+    font-weight: 600;
+}
+
 select {
-    background-color: #FFFCF0;
+    background-color: #ffffff;
     border: 2.5px solid black;
     font-family: "General Sans";
     font-weight: 500;
-    font-size: medium;
+    font-size: large;
     padding: 5px;
     border-radius: 4px;
     -webkit-appearance: none;
@@ -44,11 +50,11 @@ select::-ms-expand {
 }
 
 button {
-    background-color: #FFFCF0;
+    background-color: #ffffff;
     border: 2.5px solid black;
     font-family: "General Sans";
     font-weight: 500;
-    font-size: medium;
+    font-size: large;
     padding: 5px;
     border-radius: 4px;
     cursor: pointer;
@@ -67,9 +73,7 @@ button:hover {
     align-items: center;
     justify-content: center;
     padding: 10px;
-    background-color: #FFFCF0;
     width: 100%;
-    border: 3px solid black;
     max-width: 1200px; /* Adjust as needed */
 }
 
@@ -98,7 +102,7 @@ button:hover {
     content: '';
     position: absolute;
     width: 0;
-    height: 2px; 
+    height: 4px; 
     bottom: -2px; 
     left: 50%;
     background-color: var(--link-color);
@@ -118,3 +122,51 @@ button:hover {
 .color-change {
     color: var(--link-color);
 }
+
+.icon {
+    position: absolute;
+    top: 51%;
+    left: 21%;
+    transform: translate(-50%,-50%);
+    width: 80px;
+    height: 320px;
+    cursor: pointer;
+  }
+  
+/* Initially hide the arrow */
+.arrow {
+    display: none;
+    opacity: 0;
+    position: absolute;
+    width: 90%;
+    height: 10px;
+    background-color: var(--link-color);
+    transition: opacity 0.3s ease-in; /* Add transition for opacity */
+}
+
+/* Arrow visible and animating */
+.arrow.visible {
+    display: block;
+    opacity: 1; /* Set opacity to 1 for visible state */
+    animation: arrow 700ms linear infinite;
+}
+
+.arrow::after, .arrow::before {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 10px;
+    right: -8px;
+    background-color: var(--link-color);
+}
+
+.arrow::after {
+    top: -12px;
+    transform: rotate(45deg);
+}
+
+.arrow::before {
+    top: 12px;
+    transform: rotate(-45deg);
+}
+
